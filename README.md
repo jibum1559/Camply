@@ -26,3 +26,6 @@ Spring & React를 활용한 캠핑 전문 쇼핑몰 & 예약 사이트
 
 # 5.시연 영상
 https://youtu.be/-Qu-YGxLSxw
+[![](https://github.com/chanakoh/camply/raw/master/img/main.PNG)](https://youtu.be/-Qu-YGxLSxw)
+
+[![Rick Astley - Never Gonna Give You Up](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ "Rick Astley - Never Gonna Give You Up")
