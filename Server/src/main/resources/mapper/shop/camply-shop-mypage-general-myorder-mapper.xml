@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camply.shop.mypage.general.myorder.dao.MyOrderDao">
+	
+	<resultMap id="MyOrderResultMap" type="com.camply.shop.common.vo.OrderVO">
+		<id property="userId" column="USER_ID"/>
+		<result property="orderNo" column="ORDER_NO"/>
+		<result property="orderOrdererName" column="ORDER_ORDERER_NAME"/>
+		<result property="orderOrderEmail" column="ORDER_ORDERER_EMAIL"/>
+		<result property="orderOrderPhone" column="ORDER_ORDERER_PHONE"/>
+		<result property="orderReceiverName" column="ORDER_RECEIVER_NAME"/>
+		<result property="orderReceiverAddress" column="ORDER_RECEIVER_ADDRESS"/>
+		<result property="orderReceiverAddressDetail" column="ORDER_RECEIVER_ADDRESSDETAIL"/>
+		<result property="orderReceiverPhone" column="ORDER_RECEIVER_PHONE"/>
+		<result property="orderReceiverMessage" column="ORDER_RECEIVER_MESSAGE"/>
+		<result property="orderReceiverDeleveryMsg" column="ORDER_RECEIVER_DELIVERY_MESSAGE"/>
+		<result property="orderProductImg" column="ORDER_PRODUCT_IMG"/>
+		<result property="orderProductName" column="ORDER_PRODUCT_NAME"/>
+		<result property="orderProductAmount" column="ORDER_PRODUCT_AMOUNT"/>
+		<result property="orderProductQuantity" column="ORDER_PRODCUT_QUANTITY"/>
+		<result property="orderDate" column="ORDER_DATE"/>
+		<result property="orderProductPrice" column="ORDER_PRODUCT_PRICE"/>
+		<result property="orderStatus" column="ORDER_STATUS"/>
+		<result property="productId" column="PRODUCT_ID"/>
+	
+	</resultMap>
+	<!--내 주문 가져오기  -->
+	<select id="viewMyOrder" resultMap="MyOrderResultMap" parameterType="Long">
+      SELECT * FROM SHOP_ORDER WHERE USER_ID=#{userId} ORDER BY ORDER_NO DESC
+    </select> 
+	
+	
+	<!--내 주문 수정하기  -->
+	<select id="updateMyOrder" parameterType="int">
+	UPDATE SHOP_ORDER
+	SET ORDER_ORDERER_NAME = #{orderOrdererName},
+	ORDER_ORDERER_EMAIL = #{orderOrderEmail},
+	ORDER_ORDERER_PHONE = #{orderOrderPhone},
+	ORDER_RECEIVER_NAME = #{orderReceiverName},
+	ORDER_RECEIVER_ADDRESS = #{orderReceiverAddress},
+	ORDER_RECEIVER_ADDRESSDETAIL = #{orderReceiverAddressDetail},
+	ORDER_RECEIVER_PHONE = #{orderReceiverPhone},
+	ORDER_RECEIVER_MESSAGE = #{orderReceiverMessage},
+	ORDER_RECEIVER_DELIVERY_MESSAGE = #{orderReceiverDeleveryMsg}
+	WHERE ORDER_NO = #{orderNo}
+	</select>
+	
+	<!--내 주문 삭제하기  -->
+	<select id="deleteMyOrder" parameterType="int">
+	DELETE FROM SHOP_ORDER WHERE ORDER_NO=#{orderNo}
+	</select>
+</mapper>
+

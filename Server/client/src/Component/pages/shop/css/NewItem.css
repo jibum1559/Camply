@@ -1,0 +1,59 @@
+
+.new-item {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+ 
+  
+  .swiper-slide:hover {
+    transform: scale(1.05); 
+  }
+  
+  .imgWrap {
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  
+  .imgs {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .textWrap {
+    padding: 15px;
+  }
+  
+  .companyName {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .itemName1 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .itemsPrice {
+    margin-top: 10px;
+  }
+  
+  .customerPrice,
+  .sellPrice {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
+  

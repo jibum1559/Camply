@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.camply.shop.productdetail.question.dao.QuestionDao">
+
+	<resultMap id="selectQuestion"
+		type="com.camply.shop.productdetail.question.vo.QuestionVO">
+		<id property="questionNo" column="QUESTION_NO" />
+		<result property="productId" column="PRODUCT_ID" />
+		<result property="questionTitle" column="QUESTION_TITLE" />
+		<result property="questionText" column="QUESTION_TEXT" />
+		<result property="userName" column="USER_NAME" />
+		<result property="questionDate" column="QUESTION_DATE" />
+		<result property="questionHit" column="QUESTION_HIT" />
+	</resultMap>
+	
+	<!--문의글 조회 -->
+	<select id="getQuestion" resultMap="selectQuestion"
+		parameterType="int">
+		SELECT * FROM Shop_Question WHERE PRODUCT_ID =
+		#{productId} ORDER BY QUESTION_NO DESC
+	</select>
+	
+	<!--문의글 수정 조회 -->
+	<select id="selectUpdateQuestions" resultMap="selectQuestion" resultType="int">
+		SELECT * FROM Shop_Question WHERE QUESTION_NO = #{questionNo}
+	</select>
+	
+	<!--문의글 작성 -->
+	<insert id="insertQuestion"
+		parameterType="com.camply.shop.productdetail.question.vo.QuestionVO">
+		INSERT INTO Shop_Question (question_title,question_text, user_name, question_date, question_hit,product_id,user_id)
+		VALUES (#{questionTitle},#{questionText}, #{userName}, sysdate, 0,#{productId}, #{userId})
+	</insert>
+
+	<!--문의글 조회수 증가 -->
+	<update id="incrementQuestionHit" parameterType="int">
+		UPDATE Shop_Question
+		SET question_hit = question_hit + 1
+		WHERE question_no = #{questionNo}
+	</update>
+
+	
+
+	<!--문의글 수정 -->
+
+	<update id="updateQuestion"
+		parameterType="com.camply.shop.productdetail.question.vo.QuestionVO">
+		UPDATE Shop_Question
+		<set>
+			<if test="questionTitle != null">
+				QUESTION_TITLE = #{questionTitle},
+			</if>
+			<if test="questionText != null">
+				QUESTION_TEXT = #{questionText},
+			</if>
+		</set>
+		 WHERE QUESTION_NO = #{questionNo}
+	</update>
+
+
+	<!--문의글 삭제 -->
+	<delete id="deleteQuestion" parameterType="int">
+		DELETE FROM Shop_Question WHERE QUESTION_NO = #{questionNo}
+	</delete>
+</mapper>

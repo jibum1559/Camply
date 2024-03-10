@@ -1,0 +1,81 @@
+#tentContainer{
+    margin: auto;
+    width:1200px;
+    padding-bottom: 100px;
+}
+
+#tentSearchTitle{
+    font-size: 40px;
+    padding-top: 100px;
+    margin: auto;
+    width:1200px;
+    font-weight: 900;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    text-shadow: 3px 2px 0px orange;
+}
+
+#tentResultBox{
+    display: grid;
+    grid-template-columns: 200px 750px 150px;
+    column-gap:50px;
+}
+
+#tentIMG{
+    width:200px;
+}
+
+#firstTentBox{
+width:700px;
+}
+
+#tentType{
+    color: rgb(116, 116, 116);
+    font-weight: 900;
+}
+
+#tentLocation{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+#tentName{
+    font-size: 30px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#tentName:hover{
+    color: orange;
+}
+
+/* 캠핑장 가격 */
+#tentPrice{
+    font-size: 25px;
+    font-weight: 800;
+    position: relative;
+    color: orange;
+    float:right;
+    
+}
+
+#tentHrbar{
+    width:1200px;
+    margin-bottom: 50px;
+    color:rgb(201, 199, 199);
+}
+
+#Campdescription{
+    width:70px;
+    color:gray;
+    font-size: 14px;
+    font-weight: 900;
+    float: right;
+    margin-top: 60px;
+    padding-left: 6px;
+}
+
+#campfireIMG{
+    margin-bottom: 10px;
+    margin-left: 5px;
+}

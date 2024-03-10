@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.shop.productdetail.review.dao.ReviewDao">
+   
+   <resultMap id="SelectReview" type="com.camply.shop.productdetail.review.vo.ReviewVO">
+			<id property="reviewNo" column="REVIEW_NO"/>
+				<result property="productId" column="PRODUCT_ID" />	
+			  	<result property="reviewTitle" column="REVIEW_TITLE"/>
+			  	<result property="reviewText" column="REVIEW_TEXT"/>
+		        <result property="reviewName" column="REVIEW_NAME"/>
+		        <result property="reviewDate" column="REVIEW_DATE"/>
+		        <result property="reviewHit" column="REVIEW_HIT"/>
+	</resultMap>
+	
+	  <!--후기글 조회-->
+	<select id="getReview" resultMap="SelectReview" parameterType="int" >
+		SELECT * FROM Shop_Review WHERE PRODUCT_ID = #{productId} ORDER BY REVIEW_NO DESC
+	</select>
+	
+	<!--후기글 수정시 기존값 가져오기 위한 조회  -->
+	<select id="selectUpdateReview" resultMap="SelectReview" parameterType = "int">
+		SELECT * FROM Shop_Review WHERE REVIEW_NO = #{reviewNo}
+	</select>
+	
+	<!--후기글 전체 조회  -->
+	<select id="selectAllReview" resultType="com.camply.shop.productdetail.review.vo.ReviewVO">
+	SELECT * FROM Shop_Review
+	</select>
+	
+	<!--후기글 조회수 증가 -->
+    <update id="incrementReviewHit" parameterType="int">
+    UPDATE Shop_Review
+    SET review_hit = review_hit + 1
+    WHERE review_no = #{reviewNo}
+	</update>
+	
+   <!--후기글 작성-->
+    <insert id="insertReview" parameterType="com.camply.shop.productdetail.review.vo.ReviewVO">
+        INSERT INTO Shop_Review (REVIEW_TITLE,USER_ID,PRODUCT_ID, REVIEW_TEXT, USER_NAME, REVIEW_DATE, REVIEW_HIT)
+        VALUES ( #{reviewTitle}, #{userId}, #{productId}, #{reviewText}, #{userName}, sysdate, 0)
+    </insert>
+   
+   <!--후기글 수정  -->
+    <update id="updateReview" parameterType="com.camply.shop.productdetail.review.vo.ReviewVO">
+    UPDATE Shop_Review
+    <set>
+    <if test="reviewTitle != null">
+    	REVIEW_TITLE = #{reviewTitle},
+    </if>
+    <if test="reviewText != null">
+    	REVIEW_TEXT = #{reviewText},
+    </if>
+    </set>
+  	 WHERE REVIEW_NO = #{reviewNo}
+    </update>
+ 	
+ 	<!--후기글 삭제  -->
+ 	<delete id="deleteReview" parameterType="int">
+ 	DELETE FROM Shop_Review WHERE REVIEW_NO = #{reviewNo}
+ 	</delete>  
+    
+</mapper>

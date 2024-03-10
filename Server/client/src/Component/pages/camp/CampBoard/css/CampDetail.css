@@ -1,0 +1,167 @@
+#detailContainer{
+    margin: auto;
+    width:1000px;
+    padding-top:100px;
+}
+
+#campDetailBox{
+    width:1000px;
+    margin: auto;
+    padding: 50px 20px 20px 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px rgb(213, 212, 212);
+}
+
+/* 상세보기 제목 */
+#campdetailTitle{
+    font-weight: 900;
+    text-shadow: 2px 2px 0px orange;
+    margin-bottom: 30px;
+}
+
+/* 캠핑장 이름 */
+#campdetailName{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/* 상세페이지 이미지 */
+#DetailIMG{
+    width:45px;
+    padding-bottom: 10px;
+}
+
+/* 유형 */
+#detailType{
+    color: rgb(162, 161, 161);
+    font-weight: 900;
+}
+
+/* 지역&위치 */
+#campdetaillocation{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(255, 149, 0);
+}
+
+
+#CampdescriptionContainer{
+    margin-top: 60px;
+}
+
+#campdetail{
+    font-weight: 800;
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+}
+
+/* 상세설명 박스 */
+#CampdescriptionBox{
+    width:1000px;
+    margin: auto;
+    padding: 30px 30px 30px 30px; 
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px rgb(213, 212, 212);
+}
+
+/* 상세설명 */
+#campdetaildescription{
+    color: rgb(49, 48, 48);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* 상세페이지 예약 버튼 */
+#detailReservationButton{
+    width:300px;
+    background-color: #FEA92A;
+    border: none;
+    border-radius: 10px;
+    height:40px;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+/* 수정 삭제 버튼 */
+#detailReservationButton2{
+    width:180px;
+    background-color: #FEA92A;
+    border: none;
+    border-radius: 10px;
+    height:40px;
+    margin-bottom: 10px;
+}
+
+#detailReservationButton2:hover{
+    background-color: #fb9d10;
+}
+
+#updateAnddeleteButton{
+    float:right;
+    color:gray;
+    font-weight: 500;
+    border:none;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* 좋아요 버튼 */
+#heartButton{
+    background-color: white;
+    border: none;
+    margin-left: 20px;
+}
+
+#heartButton:hover{
+    color: #fb9d10;
+}
+
+#updateAnddeleteButton2{
+    display: grid;
+    grid-template-columns: 180px 180px;
+    column-gap: 10px;
+}
+
+#campdetailmap{
+    width:1000px;
+    margin: auto;
+}
+
+#campdetailMapTitle{
+    margin:50px 0px 20px 0px;
+    font-weight: 900;
+    text-shadow: 3px 3px 0px orange;
+}
+
+#campdetailtitle{
+    font-weight: 800;
+    color: rgb(120, 120, 120);
+    margin-top: 10px;
+    
+}
+
+/* 마커이미지 */
+#markerIMG{
+    width:20px;
+    margin-bottom: 4px;
+}
+
+/* 링크 공유하기 버튼 */
+#linkCopy{
+    border:none;
+    margin-left: 15px;
+    background-color: white;
+}
+
+#copyIMG{
+    width:25px;
+}
+    
+
+.button {
+    background-color: transparent;
+    border: none; /* 테두리 제거 */
+    outline: none; /* 포커스 효과 제거 */
+    cursor: pointer; /* 커서를 손가락 형태로 변경 */
+}
+

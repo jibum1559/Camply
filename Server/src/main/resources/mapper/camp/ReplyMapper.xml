@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//myBatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.camp.reply.dao.ReplyDAO">
+    <resultMap id="replyResultMap" type="com.camply.camp.reply.vo.ReplyVO">
+        <id property="camp_reviewnumber" column="camp_reviewnumber"/>
+        <result property="camp_id" column="camp_id"/>
+        <result property="user_id" column="user_id"/>
+        <result property="camp_rating" column="camp_rating"/>
+        <result property="camp_review" column="camp_review"/>
+    </resultMap>
+
+    <select id="selectRepliesByCampId" parameterType="Long" resultMap="replyResultMap">
+        SELECT * FROM camp_reply WHERE camp_id = #{camp_id} ORDER BY camp_reviewnumber DESC
+    </select>
+
+    <insert id="insertReply" parameterType="com.camply.camp.reply.vo.ReplyVO">
+        INSERT INTO camp_reply (camp_id, user_id, camp_rating, camp_review)
+        VALUES (#{camp_id}, #{user_id}, #{camp_rating}, #{camp_review})
+    </insert>
+
+    <update id="updateReply" parameterType="com.camply.camp.reply.vo.ReplyVO">
+        UPDATE camp_reply
+        SET camp_rating = #{camp_rating}, camp_review = #{camp_review}
+        WHERE camp_reviewnumber = #{camp_reviewnumber}
+    </update>
+
+    <delete id="deleteReply" parameterType="Long">
+        DELETE FROM camp_reply WHERE camp_reviewnumber = #{camp_reviewnumber}
+    </delete>
+
+
+</mapper>

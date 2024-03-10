@@ -1,0 +1,894 @@
+
+
+
+
+
+div, main, section, span {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    
+}
+
+table, a {
+    font-size: 12px;
+    color: #1c1c1c;
+    line-height: 1.25;
+    font-family: sans-serif;
+}
+
+div {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+
+}
+
+
+
+h3 {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #202020;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+
+.tbl-order {
+    position: relative;
+    border-top: 1px solid #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+table, a{
+    font-size: 12px;
+    line-height: 1.25;
+    font-family: sans-serif;
+}
+.tbl-order thead th {
+    padding: 15px 5px;
+    font-size: 13px;
+    color: #101010;
+    border-bottom: 1px solid #e9e9e9;
+    background: #f7f7f7;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.tbl-order tbody td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+
+
+.tb-left .tb-cetner .tb-right {
+    padding: 0 10px;
+}
+
+
+.tb-left {
+    text-align: left;
+}
+
+a {
+    vertical-align: middle;
+    color: #1c1c1c;
+    text-decoration: none;
+    background: none;
+}
+
+
+strong {
+    font-weight: bold;
+}
+
+
+tb-bol {
+    font-weight: bold;
+}
+
+
+
+.tbl-order tbody td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.tbl-order tbody .total div {
+    padding: 10px 20px;
+}
+
+.tb-right {
+    text-align: right;
+}
+
+
+
+
+.fc-red {
+    color: #f00;
+}
+
+
+
+
+
+
+
+caption {
+    display: none;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+col {
+    display: table-column;
+}
+
+
+
+
+
+
+
+
+.order-main {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 0px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    min-width: 1200px;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0px auto;
+
+}
+
+.main-container .product-list ul {
+    padding: 20px;
+    border-width: 2px 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgb(17, 17, 17);
+    border-image: initial;
+    border-right-style: initial;
+    border-right-color: initial;
+    border-left-style: initial;
+    border-left-color: initial;
+}
+
+menu, ol, ul, li {
+    list-style: none;
+}
+
+.main-container .product-list ul li {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.main-container .product-list ul li div {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 20px;
+    width: calc(50%);
+}
+
+.main-container .product-list ul li div img {
+    width: 150px;
+}
+
+.main-container .product-list ul li div img p {
+    width: 100%;
+}
+
+.main-container .product-list ul li > p:nth-child(2) {
+    width: 200px;
+    text-align: left;
+}
+
+.main-container .product-list ul li > p:last-child{
+    width: 200px;
+    text-align: right;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+
+.main-container .order-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.main-container .order-info .order-form {
+    width: 50%;
+}
+
+.eEOGCf {
+    padding: 20px 0px;
+    color: rgb(17, 17, 17);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.form div {
+    display: flex;
+    position: relative;
+}
+
+.form div p {
+    width: 15%;
+    font-size: 0.9rem;
+    color: rgb(17, 17, 17);
+    line-height: 30px;
+}
+
+
+.form div div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.form div div input {
+    border: 1px solid rgb(221, 221, 221);
+    width: 100%;
+    height: 30px;
+    font-size: 0.8rem;
+    padding: 0px 10px;
+    background: rgb(255, 255,255);
+}
+
+
+/* 이메일 */
+option {
+    font-weight: normal;
+    display: block;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    white-space: nowrap;
+}
+
+.form select:focus {
+    outline: none;
+}
+
+select:focus-visible {
+    outline-offset: 0px;
+}
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+.form select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(221, 221, 221);
+    padding-left: 10px;
+}
+
+select {
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    white-space: pre;
+}
+
+input[type="text" i] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+
+
+.form div div .direct-input {
+    position: absolute;
+    width: calc(50% - 40px);
+    right: 20px;
+    border-right: 0px;
+}
+
+
+/* 휴대 전화 */
+.form div input[type="number"]{
+    border: 1px solid rgb(221, 221, 221);
+
+}
+
+.form div div input {
+    width: 100%;
+    height: 30px;
+    font-size: 0.8rem;
+    padding: 0px 10px;
+    background: rgb(255, 255,255);
+}
+
+input[type="number" i ] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+
+
+
+/* 주소 */
+.form .address-form {
+    position: static;
+
+}
+.form div {
+    display: flex;
+}
+
+.form .address-form .address-search {
+    display: flex;
+    flex-direction: column;
+}
+
+.form div div {
+    gap: 10px;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.form div {
+    position: relative;
+}
+
+.form .address-form .address-search .address-num {
+    display: flex;
+
+}
+
+.form .address-form .address-search .address-num input {
+    width: 100px;
+}
+
+.form div div input {
+    border: 1px solid rgb(221, 221, 221);
+    height: 30px;
+    font-size: 0.8rem;
+    padding: 0px 10px;
+    background: rgb(255, 255, 255);
+
+}
+input[type="text" i] {
+    writing-mode: horizontal-tb !important;
+}
+input:disabled {
+    cursor: default;
+    background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+    color: -internal-light-dark(rgb(84, 84, 84), rgb(170, 170, 170));
+    border-color: rgba(118, 118, 118, 0.3);
+}
+
+input[type="text" i] {
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+
+.form .address-form .address-search .address-num button {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgb(221, 221, 221);
+    background: rgb(221, 221, 221);
+    color: rgb(17, 17, 17);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+button {
+    appearance: auto;
+    
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+
+
+
+
+/* 결제 계좌*/
+.form .select-none-text {
+    font-size: 0.9rem;
+    padding: 10px 0px;
+}
+
+.kpqPRV {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.kpqPRV select {
+    border: 1px solid rgb(221, 221, 221);
+    width: 100%;
+    height: 30px;
+}
+
+.kpqPRV .select-text {
+    padding: 10px 0px;
+    font-size: 0.8rem;
+    color: rgb(119, 119, 119);
+}
+
+.form .select-text {
+    display: none;
+}
+
+
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+
+/* 결제하기 폼 */
+.form .order-info .order-price {
+    width: 50%;
+    position: relative;
+}
+
+.form .order-info .order-price .order-price-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 57px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.form .order-info .order-price .order-price-info p {
+    font-size: 0.9rem;
+}
+
+
+
+.form .order-info .order-price .order-price-info .order-total-price {
+    padding: 10px 0px;
+    font-size: 1.1rem;
+    border-top: 1px solid rgb(221, 221, 221);
+    margin-top: 5px;
+}
+
+.form .order-info .order-price .order-price-info .order-total-price button {
+    width: 100%;
+    background: #FEA92A;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+
+.order h3 {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #202020;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+.order .tbl-pay{
+    margin-top: 10px;
+    border-top: 1px solid #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.order .tbl-pay thead th {
+    padding: 15px;
+    background: #ececec;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.order .tbl-pay th {
+    color: #444;
+}
+
+
+.order .tbl-pay thead td {
+    padding: 25px 0 25px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.order .tbl-pay td {
+    border-bottom: 1px solid #ccc;
+    color: #444;
+    background: #f7f7f7;
+}
+
+.order .tbl-pay thead td .base {
+    z-index: 1;
+    position: relative;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: normal;
+}
+
+.order .tbl-pay thead td strong em {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+
+
+.order .tbl-pay thead td .base .plus {
+    position: absolute;
+    top: 9px;
+    width: 23px;
+    height: 23px;
+    right: 90%;
+}
+
+
+table img {
+    vertical-align: middle;
+
+}
+
+
+thead td .base .equal {
+    position: absolute;
+    top: 9px;
+    width: 23px;
+    height: 23px;
+    right: 90%;
+}
+
+
+
+.order .tbl-pay thead td strong em {
+    position: relative;
+    top: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+.order .fc-red {
+    color: #FEA92A;
+}
+
+
+.order h3 {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #202020;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+
+
+.order .tbl-order {
+    position: relative;
+    border-top: 1px solid #000;
+}
+
+.order .tbl-order .text-l {
+    padding: 0 15px;
+}
+
+.order .tbl-order tbody th {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.order .tbl-order .payment li {
+    margin: 10px 0;
+    padding-left: 18px;
+}
+
+.chk-rdo {
+    width: 13px;
+    height: 13px;
+    vertical-align: middle;
+}
+
+.order .tbl-order .payment li em {
+    color: #FEA92A;
+}
+
+.order .fc-red {
+    color: #FEA92A;
+}
+
+.order .policy {
+    border: 1px solid #ccc;
+    margin-bottom: -1px;
+
+}
+
+.order .policy .tbl-order tbody th {
+    background: #f8f8f8;
+}
+
+.order .tbl-order .text-l {
+    padding: 0 15px;
+
+}
+
+.order .text-l {
+    text-align: left;
+}
+
+
+.order .policy .tbl-order tbody td {
+    padding: 16px;
+}
+
+.order  .tbl-order tbody td {
+    border-bottom: 1px solid #e9e9e9;
+
+}
+
+.order .order-agree-all {
+    padding: 5px 0;
+}
+
+
+.order .tot-order {
+    margin: 10px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.order .tbl-order {
+    position: relative;
+}
+
+.order .tot-order td {
+    color: #777;
+
+}
+
+
+.order .tot-order td .totalprice {
+    color: #000;
+    font-size: 16px;
+    letter-spacing: -1px;
+}
+
+.order .tot-order td .totalprice em {
+    color: #FEA92A;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+
+.order .paybutton {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.order .paybutton button {
+    width: 162px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 48px;
+    margin-bottom: 50px;
+}
+
+.CSSbuttonBlack {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    border: 1px solid #FEA92A;
+    background: #FEA92A;
+    transition: all 0.3s ease;
+}
+
+.CSSbuttonWhite {
+    margin-left: 10px;
+    display: inline-block;
+    color: #FEA92A;
+    text-align: center;
+    border: 1px solid #e9e9e9;
+    background: #fff;
+    transition: all 0.3s ease;
+
+}
+
+.tbl-order-cart {
+    position: relative;
+    border-top: 1px solid #000;
+
+}
+
+.order .tbl-order-cart thead th {
+    padding: 15px 5px;
+    font-size: 13px;
+    color: #101010;
+    border-bottom: 1px solid #e9e9e9;
+    background: #f7f7f7;
+}
+
+.order .tbl-order-cart tbody td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.tb-center {
+    text-align: center;
+}
+
+
+.tb-left {
+    text-align: left;
+}
+
+.order .tbl-order-cart tbody td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.order .tbl-order-cart tbody .total div {
+    padding: 10px 20px;
+
+}
+
+
+.tb-right {
+    text-align: right;
+}
+
+
+
+.deli-text {
+    min-width: 600px;
+    min-height: 200px;
+}
+
+.order-text {
+    min-width: 600px;
+    min-height: 200px;
+}

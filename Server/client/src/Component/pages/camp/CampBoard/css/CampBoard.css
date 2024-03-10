@@ -1,0 +1,77 @@
+.radio-buttons-container div {
+  display: inline-block;
+  margin-right: 10px; /* Adjust the spacing between radio buttons if needed */
+}
+
+.facilities-checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 각 체크박스 사이의 간격 조절 */
+}
+
+.facilities-checkbox-container div {
+  flex-basis: calc(20% - 10px); /* 5개씩 나열되므로 각 체크박스의 너비를 조절 */
+}
+
+#campBoardcategory {
+  background-color: white;
+  border: none;
+  font-weight: 500;
+}
+
+#campBoardContainer {
+  width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#campBoardTitle {
+  font-weight: 900;
+  font-size: 25px;
+  color: orange;
+}
+
+#campaddButton {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: 900;
+}
+
+#campaddButton:hover,
+#campaddButton2:hover {
+  background-color: rgb(255, 201, 99);
+}
+
+#campaddButton2 {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: 900;
+  padding: 10px 30px 10px 30px;
+}
+
+#campBoardimg {
+  padding-left: 50px;
+  font-weight: 100;
+  border: none !important;
+}
+
+#campboardTd {
+  border: none !important;
+}
+
+#campBoardTitledescription {
+  font-size: 12px;
+  color: red;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+#campboardTR {
+  margin-top: 100px;
+}
+
+#campBoardTitleBox {
+  margin-bottom: 20px;
+}

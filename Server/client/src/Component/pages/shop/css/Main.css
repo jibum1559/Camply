@@ -1,0 +1,60 @@
+/* 메인페이지 css */
+
+* {
+    font-family: sans-serif;
+}
+
+.main-container {
+    height: 100vh; 
+    background-image: url('../img/MainImg/캠핑\ 메인페이지\ 이미지.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+}
+
+.main-header {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+  
+}
+
+.camp-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+
+sapn {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+.main-iamge {
+    /* 부모 컨테이너에 맞게 이미지 크기 조절 */
+    max-width: 100%;
+    max-height: 100%;
+}

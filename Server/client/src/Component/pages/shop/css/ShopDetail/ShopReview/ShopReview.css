@@ -1,0 +1,111 @@
+.detailTap {
+  padding-top: 100px;
+  position: relative;
+}
+
+.detailTap ul {
+  padding-left: 1px;
+}
+
+
+.detailTap ul li {
+  margin-left: -1px;
+  float: left;
+  width: 100px;
+}
+
+.detailTap ul li a{
+  display: block;
+  height: 60px;
+  font-size: 15px;
+  color: #9f9f9f;
+  line-height: 60px;
+  text-align: center;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.detailTap ul li a .active {
+
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+.review-list {
+  margin-top: 10px;
+}
+
+.table-slide {
+  border-top: 1px solid #000;
+}
+
+
+.table-slide thead th {
+  padding: 15px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #e9e9e9;
+  font-weight: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tb-center {
+  text-align: center;
+}
+
+
+.table-slide td {
+  padding: 15px 0;
+  background: url(https://image.makeshop.co.kr/makeshop/d3/basic_simple/common/board_dot.gif) repeat-x 0 botton;
+}
+
+.tb-left {
+  text-align: left;
+}
+
+.tb-left .tb-center {
+  padding: 0 10px;
+}
+
+
+.table-slide .review-list td .writer > span {
+  display: block;
+}
+
+
+.table-slide tr .cnt td {
+  padding: 20px;
+  color: #999;
+  cursor: default;
+}
+
+.table-slide .list-btm {
+  position: relative;
+}
+
+
+.table-slide .paging-wrap {
+  margin: 0 110px;
+  position: relative;
+  float: left;
+  width: 880px;
+}
+
+
+.paging {
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+.smaller-table {
+  width: 60%;
+margin: auto; 
+}
+
+.btm-writer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+
+

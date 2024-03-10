@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//myBatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.camp.board.dao.BoardDAO">
+
+    <resultMap id="CampPostingMap" type="com.camply.camp.board.vo.BoardVO">
+        <id column="CAMP_ID" property="camp_id"/>
+        <result column="USER_ID" property="user_id"/>
+        <result column="CAMP_SELECT" property="camp_select"/>
+        <result column="CAMP_LOCATION" property="camp_location"/>
+        <result column="CAMP_NAME" property="camp_name"/>
+        <result column="CAMP_ADDRESS" property="camp_address"/>
+        <result column="CAMP_PHONE" property="camp_phone"/>
+        <result column="CAMP_ADULT" property="camp_adult"/>
+        <result column="CAMP_CHILD" property="camp_child"/>
+        <result column="CAMP_PRICE" property="camp_price"/>
+        <result column="CAMP_DESCRIPTION" property="camp_description"/>
+        <result column="CAMP_IMAGES" property="camp_images"/>
+        <result column="CAMP_FACILITY" property="camp_facility"/>
+    </resultMap>
+
+    <insert id="insertBoard" parameterType="com.camply.camp.board.vo.BoardVO">
+        INSERT INTO camp_posting (
+            USER_ID,
+            CAMP_SELECT,
+            CAMP_LOCATION,
+            CAMP_NAME,
+            CAMP_ADDRESS,
+            CAMP_PHONE,
+            CAMP_ADULT,
+            CAMP_CHILD,
+            CAMP_PRICE,
+            CAMP_IMAGES,
+            CAMP_DESCRIPTION,
+            CAMP_FACILITY
+        )
+        VALUES (
+                   #{user_id},
+                   #{camp_select},
+                   #{camp_location},
+                   #{camp_name},
+                   #{camp_address},
+                   #{camp_phone},
+                   #{camp_adult},
+                   #{camp_child},
+                   #{camp_price},
+                   #{camp_images},
+                   #{camp_description},
+                   #{camp_facility}
+               )
+    </insert>
+
+    <select id="getAllBoard"  resultMap="CampPostingMap">
+        SELECT * FROM camp_posting ORDER BY camp_id DESC
+    </select>
+
+    <select id="getBoardCategory"  resultMap="CampPostingMap">
+        SELECT * FROM camp_posting WHERE camp_select = #{camp_select} ORDER BY dbms_random.value
+    </select>
+
+    <select id="getBoardLocation"  resultMap="CampPostingMap">
+        SELECT * FROM camp_posting WHERE camp_location = #{camp_location} ORDER BY dbms_random.value
+    </select>
+
+    <select id="getBoardById"  resultMap="CampPostingMap" parameterType="java.lang.Long">
+        SELECT * FROM camp_posting WHERE camp_id = #{camp_id}
+    </select>
+
+    <delete id="deleteBoardById" parameterType="java.lang.Long">
+        DELETE FROM camp_posting WHERE camp_id = #{camp_id}
+    </delete>
+
+    <update id="updateBoardById" parameterType="com.camply.camp.board.vo.BoardVO">
+        UPDATE camp_posting
+        SET
+            USER_ID = #{user_id},
+            CAMP_SELECT = #{camp_select},
+            CAMP_LOCATION = #{camp_location},
+            CAMP_NAME = #{camp_name},
+            CAMP_ADDRESS = #{camp_address},
+            CAMP_PHONE = #{camp_phone},
+            CAMP_ADULT = #{camp_adult},
+            CAMP_CHILD = #{camp_child},
+            CAMP_PRICE = #{camp_price},
+            CAMP_DESCRIPTION = #{camp_description},
+            CAMP_IMAGES = #{camp_images},
+            CAMP_FACILITY = #{camp_facility}
+        WHERE CAMP_ID = #{camp_id}
+    </update>
+
+</mapper>

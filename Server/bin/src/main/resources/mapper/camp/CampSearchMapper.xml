@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.camply.camp.search.dao.CampSearchDao">
+
+     <resultMap id="CampSearchMap" type="com.camply.camp.search.vo.CampSearchVO">
+        <id property="CAMP_ID" column="CAMP_ID" />
+        <result property="CAMP_SELECT" column="CAMP_SELECT"/>
+        <result property="CAMP_LOCATION" column="CAMP_LOCATION"/>
+        <result property="CAMP_NAME" column="CAMP_NAME"/>
+        <result property="CAMP_ADULT" column="CAMP_ADULT"/>
+        <result property="CAMP_CHILD" column="CAMP_CHILD"/>
+        <result property="CAMP_PRICE" column="CAMP_PRICE"/>
+        <result property="CAMP_IMAGES" column="CAMP_IMAGES"/>
+        
+    </resultMap> 
+    <!-- <collection property="CampReservationSearch" resultMap="CampReservationSearchMap"/>  -->
+<!--      
+    <resultMap id="CampReservationSearchMap" type="com.camply.camp.search.vo.CampReservationSearchVO">
+    	 <id column="CAMP_ID" property="CAMP_ID"/>
+        <result column="CAMP_CHECKIN" property="CAMP_CHECKIN"/>
+        <result column="CAMP_CHECKOUT" property="CAMP_CHECKOUT"/>
+    </resultMap> -->
+
+<select id="searchCampList" resultMap="CampSearchMap" parameterType="com.camply.camp.search.vo.CampSearchVO">
+    SELECT * FROM CAMP_POSTING WHERE CAMP_SELECT = #{CAMP_SELECT}
+         <if test="CAMP_LOCATION != null">
+        AND CAMP_LOCATION = #{CAMP_LOCATION}
+    </if>
+    <if test="CAMP_ADULT != null">
+        AND CAMP_ADULT >= #{CAMP_ADULT}
+    </if>
+    <if test="CAMP_CHILD != null">
+        AND CAMP_CHILD >= #{CAMP_CHILD}
+    </if> 
+</select>
+
+
+</mapper>

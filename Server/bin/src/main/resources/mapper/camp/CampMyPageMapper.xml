@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.camply.camp.mypage.dao.CampMypageDao">
+    	
+    	<!-- 결재완료내역 -->
+    	<resultMap id="PaymentResultMap" type="com.camply.camp.mypage.vo.CampPaymentResultVO">
+    		 <id property="CAMP_RESERVATION" column="CAMP_RESERVATION" />
+	        <result property="USER_ID" column="USER_ID"/>
+	        <result property="CAMP_NAME" column="CAMP_NAME"/>
+	        <result property="CAMP_CHECKIN" column="CAMP_CHECKIN"/>
+	        <result property="CAMP_CHECKOUT" column="CAMP_CHECKOUT"/>
+	        <result property="COMPLETE_PAYMENT" column="COMPLETE_PAYMENT"/>
+	        <result property="TOTLE_PRICE" column="TOTLE_PRICE"/>
+    	</resultMap>
+    	
+    	<!-- 업로드리스트 -->
+    	<resultMap id="UploadProductListMap" type="com.camply.camp.mypage.vo.CampUploadProductListVO">
+    		 <id property="USER_ID" column="USER_ID" />
+	        <result property="CAMP_ID" column="CAMP_ID"/>
+	        <result property="CAMP_NAME" column="CAMP_NAME"/>
+	        <result property="CAMP_LOCATION" column="CAMP_LOCATION"/>
+	        <result property="CAMP_PRICE" column="CAMP_PRICE"/>
+	        <result property="CAMP_IMAGES" column="CAMP_IMAGES"/>
+    	</resultMap>
+    
+    	<!-- 좋아요 리스트 -->	
+    	<resultMap id="DipsListMap" type="com.camply.camp.mypage.vo.CampDipsListVO">
+		    <id property="USER_ID" column="USER_ID" />
+		    <collection property="CampDipsProductList" ofType="com.camply.camp.mypage.vo.CampDipsProductListVO" resultMap="CampDipsProductListMap"/>    
+		</resultMap>
+    	
+		<resultMap id="CampDipsProductListMap" type="com.camply.camp.mypage.vo.CampDipsProductListVO">	
+		    <result property="CAMP_ID" column="CAMP_ID"/>
+		    <result property="CAMP_NAME" column="CAMP_NAME"/>
+		    <result property="CAMP_PRICE" column="CAMP_PRICE"/>
+		</resultMap>
+	        
+	        
+    
+    	<!-- 사용자 각각의 예약한 캠핑장정보를 개별적으로 불러와야 하기때문에 USER_ID를 조건으로 건다-->
+    	<select id="pamentResultList" resultMap="PaymentResultMap" parameterType="com.camply.camp.mypage.vo.CampPaymentResultVO">
+    		SELECT * FROM CAMP_RESERVATION WHERE USER_ID = #{USER_ID}
+    	</select>
+    	
+    	<!-- 판매자가 업로드한 캠핑장 정보를 개별적으로 불러와야 하기때문에 USER_ID를 조건으로 건다 -->
+    	<select id="uploadProductList" resultMap="UploadProductListMap" parameterType="com.camply.camp.mypage.vo.CampUploadProductListVO">
+    		SELECT * FROM CAMP_POSTING WHERE USER_ID = #{USER_ID}
+    	</select>
+    	
+    	<select id="dipsList" resultMap="DipsListMap" parameterType="com.camply.camp.mypage.vo.CampDipsListVO">
+    		SELECT d.USER_ID, p.CAMP_ID, p.CAMP_NAME, p.CAMP_PRICE FROM CAMP_DIPS d JOIN CAMP_POSTING p ON d.CAMP_ID = p.CAMP_ID WHERE d.USER_ID = #{USER_ID}
+    	</select>
+    	
+ 
+    	
+    	
+    </mapper>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.user.dao.UserDao">
+	<resultMap id="UserVO" type="com.camply.user.vo.UserVO">
+			<id property="USER_ID" column="USER_ID"/>
+			  	<result property="USER_EMAIL" column="USER_EMAIL"/>
+			  	<result property="USER_PASSWORD" column="USER_PASSWORD"/>
+			  	<result property="USER_NAME" column="USER_NAME"/>
+			  	<result property="USER_NICKNAME" column="USER_NICKNAME"/>
+			  	<result property="USER_TYPE" column="USER_TYPE"/>
+			  	<result property="USER_BUSINESSADDRESS" column="USER_BUSINESSADDRESS"/>
+			  	<result property="USER_BUSINESSNUMBER" column="USER_BUSINESSNUMBER"/>
+			  	<result property="USER_ADDRESS" column="USER_ADDRESS"/>
+			  	<result property="USER_BUSINESSPHONE" column="USER_BUSINESSPHONE"/>
+		       
+	</resultMap>
+	
+	<insert id="emailRegister"  parameterType="com.camply.user.vo.UserVO">
+	<!-- 이메일, 비밀번호, 이름, 닉네임 , 사용자분류-->
+		INSERT INTO USER_INFO (USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME, USER_TYPE) VALUES (#{USER_EMAIL}, #{USER_PASSWORD}, #{USER_NAME}, #{USER_NICKNAME}, #{USER_TYPE})
+	</insert>
+	
+	<insert id="managerRegister" parameterType="com.camply.user.vo.UserVO">
+		INSERT INTO USER_INFO (USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME, USER_TYPE, USER_BUSINESSNUMBER,  USER_BUSINESSADDRESS, USER_BUSINESSPHONE) VALUES (#{USER_EMAIL}, #{USER_PASSWORD}, #{USER_NAME}, #{USER_NICKNAME}, #{USER_TYPE}, #{USER_BUSINESSNUMBER}, #{USER_BUSINESSADDRESS}, #{USER_BUSINESSPHONE})
+	</insert>
+	
+	<select id="selectEmail" resultMap="UserVO" parameterType="String">
+		SELECT * FROM USER_INFO WHERE USER_EMAIL = #{USER_EMAIL}
+	</select>
+	
+	<select id="emailLogin" parameterType="com.camply.user.vo.UserVO">
+		SELECT * FROM USER_INFO WHERE USER_EMAIL = #{USER_EMAIL} AND USER_PASSWORD = #{USER_PASSWORD}
+	</select>
+
+	<select id="selectUserById" resultMap="UserVO" parameterType="Long">
+		SELECT * FROM USER_INFO WHERE USER_ID = #{USER_ID}
+	</select>
+
+	<delete id="deleteUserById" parameterType="Long">
+		DELETE FROM USER_INFO WHERE USER_ID = #{USER_ID}
+	</delete>
+
+	<update id="updateUserById" parameterType="com.camply.user.vo.UserVO">
+		UPDATE USER_INFO
+		<set>
+			<if test="USER_EMAIL != null">USER_EMAIL = #{USER_EMAIL},</if>
+			<if test="USER_PASSWORD != null">USER_PASSWORD = #{USER_PASSWORD},</if>
+			<if test="USER_NAME != null">USER_NAME = #{USER_NAME},</if>
+			<if test="USER_NICKNAME != null">USER_NICKNAME = #{USER_NICKNAME},</if>
+			<if test="USER_BUSINESSNUMBER != null">USER_BUSINESSNUMBER = #{USER_BUSINESSNUMBER},</if>
+			<if test="USER_BUSINESSADDRESS != null">USER_BUSINESSADDRESS = #{USER_BUSINESSADDRESS},</if>
+			<if test="USER_ADDRESS != null">USER_ADDRESS = #{USER_ADDRESS},</if>
+			<if test="USER_BUSINESSPHONE != null">USER_BUSINESSPHONE = #{USER_BUSINESSPHONE},</if>
+		</set>
+		WHERE USER_ID = #{USER_ID}
+	</update>
+
+</mapper>
+

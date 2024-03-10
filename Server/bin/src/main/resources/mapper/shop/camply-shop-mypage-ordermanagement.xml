@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camply.shop.mypage.admin.ordermanagement.dao.OrderManagementDAO">
+	<resultMap id="OrderListResultMap" type="com.camply.shop.common.vo.OrderVO">
+		<!-- Order 매핑 -->
+		<id property="orderId" column="ORDER_ID"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="orderOrdererName" column="ORDER_ORDERER_NAME"/>
+		<result property="orderOrderEmail" column="ORDER_ORDERER_EMAIL"/>
+		<result property="orderOrderPhone" column="ORDER_ORDERER_PHONE"/>
+		<result property="orderReceiverName" column="ORDER_RECEIVER_NAME"/>
+		<result property="orderReceiverAddress" column="ORDER_RECEIVER_ADDRESS"/>
+		<result property="orderReceiverAddressDetail" column="ORDER_RECEIVER_ADDRESSDETAIL"/>
+		<result property="orderReceiverPhone" column="ORDER_RECEIVER_PHONE"/>
+		<result property="orderReceiverMessage" column="ORDER_RECEIVER_MESSAGE"/>
+		<result property="orderReceiverDeleveryMsg" column="ORDER_RECEIVER_DELIVERY_MESSAGE"/>
+		<result property="orderProductImg" column="ORDER_PRODUCT_IMG"/>
+		<result property="orderProductName" column="ORDER_PRODUCT_NAME"/>
+		<result property="orderProductAmount" column="ORDER_PRODUCT_AMOUNT"/>
+		<result property="orderProductQuantity" column="ORDER_PRODCUT_QUANTITY"/>
+		<result property="orderDate" column="ORDER_DATE"/>
+		<result property="orderProductPrice" column="ORDER_PRODUCT_PRICE"/>
+		<result property="orderStatus" column="ORDER_STATUS"/>
+		<result property="productId" column="PRODUCT_ID"/>
+	
+		<!-- ShopProduct 매핑 -->
+		<association property="product" javaType="com.camply.shop.common.vo.ProductVO">
+		    <id property="productId" column="PRODUCT_ID"/>
+		    <result property="productName" column="PRODUCT_NAME"/>
+		    <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+			<result property="productPrice" column="PRODUCT_PRICE"/>
+			<result property="productCategory" column="PRODUCT_CATEGORY"/>
+			<result property="productColor" column="PRODUCT_COLOR"/>
+			<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+			<result property="productMain" column="PRODUCT_MAIN"/>
+			<result property="productMain2" column="PRODUCT_MAIN2"/>
+			<result property="productMain3" column="PRODUCT_MAIN3"/>
+			<result property="productContent" column="PRODUCT_CONTENT"/>
+			<result property="productCreateDate" column="PRODUCT_CREATE_DATE"/>
+			<result property="productStock" column="PRODUCT_STOCK"/>
+			<result property="userId" column="USER_ID"/>
+			<result property="productStatus" column="PRODUCT_STATUS"/>
+			<result property="productCode" column="PRODUCT_CODE"/>
+		</association>
+	</resultMap>
+	<select id="getOrderList" resultMap="OrderListResultMap">
+        SELECT
+            o.*,
+            p.PRODUCT_ID, p.PRODUCT_NAME, p.PRODUCT_DESCRIPTION, p.PRODUCT_PRICE,
+            p.PRODUCT_CATEGORY, p.PRODUCT_COLOR, p.PRODUCT_THUMBNAIL, p.PRODUCT_MAIN,
+            p.PRODUCT_MAIN2, p.PRODUCT_MAIN3, p.PRODUCT_CONTENT, p.PRODUCT_STOCK,
+            p.PRODUCT_CREATE_DATE, p.USER_ID
+        FROM
+            SHOP_ORDER o
+        INNER JOIN
+            SHOP_PRODUCT p ON o.PRODUCT_ID = p.PRODUCT_ID
+        WHERE
+            p.USER_ID = #{userId}
+        ORDER BY
+            o.ORDER_DATE DESC
+    </select> 
+	<!-- <select id="getOrderList" resultMap="OrderListResultMap">
+    SELECT
+        p.PRODUCT_ID, p.PRODUCT_NAME, p.PRODUCT_DESCRIPTION, p.PRODUCT_PRICE, p.PRODUCT_CATEGORY, p.PRODUCT_COLOR, p.PRODUCT_THUMBNAIL, p.PRODUCT_MAIN, p.PRODUCT_MAIN2, p.PRODUCT_MAIN3,  p.PRODUCT_CONTENT,  p.PRODUCT_CREATE_DATE, p.PRODUCT_STOCK,
+        p.USER_ID AS SELLER_ID,
+        o.ORDER_ID,
+        o.USER_ID AS BUYER_ID,
+        o.ORDER_ORDERER_NAME, o.ORDER_ORDERER_EMAIL, o.ORDER_ORDERER_PHONE, o.ORDER_RECEIVER_NAME, o.ORDER_RECEIVER_ADDRESS, o.ORDER_RECEIVER_ADDRESSDETAIL, o.ORDER_RECEIVER_PHONE, o.ORDER_RECEIVER_MESSAGE, o.ORDER_RECEIVER_DELIVERY_MESSAGE,
+        o.ORDER_PRODUCT_IMG, o.ORDER_PRODUCT_NAME, o.ORDER_PRODUCT_AMOUNT, o.ORDER_PRODCUT_QUANTITY, o.ORDER_DATE, o.ORDER_PRODUCT_PRICE, o.ORDER_STATUS
+    FROM
+        SHOP_PRODUCT p
+    INNER JOIN
+        SHOP_ORDER o ON p.PRODUCT_ID = o.PRODUCT_ID
+    WHERE
+        p.USER_ID = #{userId}
+    ORDER BY
+        o.ORDER_DATE DESC
+</select> -->
+		
+</mapper>
+
+<!--주문일, 주문번호(오더), 주문자, 상품명, 총결제금액, 상품금액, 주문상태(오더)-->

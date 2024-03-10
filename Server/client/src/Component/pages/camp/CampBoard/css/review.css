@@ -1,0 +1,95 @@
+/* 리뷰 css */
+
+#reviewContainer{
+    width:1000px;
+    margin: auto;
+}
+
+#reviewBox{
+    display: grid;
+    grid-template-columns:50px 120px 50px 120px 50px  470px 200px;
+    width:1000px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+#reviewUserID{
+    width:100px;
+}
+
+#reviewgrade{
+    width:100px;
+}
+
+#reviewContent{
+    width:450px;
+}
+
+#reviewButton{
+    width:104px;
+    border: none;
+    background-color: orange;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#reviewButton:hover{
+    background-color: rgb(255, 140, 0);
+}
+
+#reviewType{
+    padding-top: 8px;
+    font-weight: 700;
+}
+
+/* 작성된 리뷰 박스 */
+#reviewcontentBox{
+    margin-top: 50px;
+    background-color: rgba(240, 240, 240, 0.417);
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 40px;
+}
+
+#reviewcontentuserid{
+    font-weight: 900;
+    font-size: 20px;
+    margin-right: 20px;
+
+}
+
+#reviewcontentrating{
+
+}
+
+#reviewcontent{
+    
+}
+
+#reviewcontentupdate{
+    border: none;
+    background-color: rgba(240, 240, 240, 0.417);
+    width: 50px;
+}
+
+#reviewcontentdelete{
+    border: none;
+    background-color: rgba(240, 240, 240, 0.588);
+    width: 50px;
+
+}
+
+#reviewhrBar{
+    color:rgba(196, 193, 193, 0.712);
+}
+
+#reviewcontentupdatedelete{
+    float: right;
+    display: grid;
+    grid-template-columns: 70px 60px;
+    margin-top: -25px;
+}
+
+#reviewListTitle{
+    margin-bottom: 40px;
+    font-weight: 700;
+}

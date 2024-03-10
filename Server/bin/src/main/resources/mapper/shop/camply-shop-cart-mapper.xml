@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.shop.cart.dao.CartDao">
+
+	<!--장바구니로 상품 정보 가져오기 -->
+	<resultMap id="ShopCart" type="com.camply.shop.common.vo.ProductVO">
+		<id property="productId" column="PRODUCT_ID" />
+		<result property="productName" column="PRODUCT_NAME" />
+		<result property="productDescription" column="PRODUCT_DESCRIPTION" />
+		<result property="productPrice" column="PRODUCT_PRICE" />
+		<result property="productColor" column="PRODUCT_COLOR" />
+		<result property="productThumbnail" column="PRODUCT_THUMBNAIL" />
+		<result property="productMain" column="PRODUCT_MAIN" />
+		<result property="productMain2" column="PRODUCT_MAIN2" />
+		<result property="productMain3" column="PRODUCT_MAIN3" />
+		<result property="productContent" column="PRODUCT_CONTENT" />
+		<result property="productCreateDate" column="PRODUCT_CREATE_DATE" />
+		<result property="productStock" column="PRODUCT_STOCK" />
+		<result property="userId" column="USER_ID" />
+		<result property="productStatus" column="PRODUCT_STATUS" />
+		<result property="productCode" column="PRODUCT_CODE" />
+	</resultMap>
+	
+		<resultMap id="selectCart" type="com.camply.shop.cart.vo.CartVO">
+		   <id property="cartId" column="CART_ID"/>
+		        	<result property="productId" column="PRODUCT_ID"/>
+		        	<result property="userId" column="USER_ID"/>
+		        	<result property="productCategory" column="PRODUCT_CATEGORY"/>
+		        	<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+		        	<result property="productName" column="PRODUCT_NAME"/>
+		        	<result property="productPrice" column="PRODUCT_PRICE"/>
+		        	<result property="productAmount" column="PRODUCT_AMOUNT"/>
+		   </resultMap>
+
+	<select id="getProduct" resultMap="ShopCart" parameterType="int">
+		SELECT * FROM shop_product WHERE PRODUCT_ID = #{productId}
+	</select>
+
+	<!--장바구니 정보 저장 -->
+	<insert id="insertCart"
+		parameterType="com.camply.shop.cart.vo.CartVO">
+		INSERT INTO SHOP_CART (PRODUCT_ID,
+		PRODUCT_THUMBNAIL,PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_AMOUNT,USER_ID)
+		VALUES
+		(#{productId},#{productThumbnail},#{productName},#{productPrice},#{productAmount},#{userId})
+	</insert>
+	
+	<!--내 장바구니 정보 가져오기  -->
+    <select id="getCart" resultMap="selectCart" parameterType="Long">
+    	SELECT * FROM Shop_Cart WHERE USER_ID = #{userId} ORDER BY CART_ID DESC
+    </select>
+    
+    <!--장바구니 정보 삭제  -->
+    <delete id="deleteCart" parameterType="int">
+    DELETE FROM Shop_Cart WHERE CART_ID = #{cartId}
+    </delete>
+    
+</mapper>	

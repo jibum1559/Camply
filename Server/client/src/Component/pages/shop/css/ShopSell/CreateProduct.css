@@ -1,0 +1,185 @@
+/* Add this CSS to your stylesheet or component style */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Add more styling as needed */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 입력창 꾸미기 */
+.create-update-Product .form-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: -1px;
+  background-color: #fff; /* 흰색 배경 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-update-Product .form-group label {
+  margin-right: 15px;
+  width: 25%; /* 라벨의 너비를 설정 */
+  text-align: unset; /* 라벨의 텍스트를 정렬 */
+}
+
+.create-update-Product .form-group .form-control {
+  flex: 0 0 72%; /* flex-grow, flex-shrink, flex-basis를 설정 */
+  width: 631px; /*상태창 크기 */
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  position: relative;
+  top: 0px;
+}
+
+/*placeholder 글씨크기 조절*/
+.form-control::placeholder {
+  font-size: 12px; /* 원하는 크기로 조절하세요 */
+  color: #c0c0c0;
+}
+
+.create-update-Product .form-group input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  position: relative;
+  top: 5px;
+}
+
+.create-update-Product .form-group button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  color: white;
+  background-color: #48a0ff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.create-update-Product .form-group button:hover {
+  background-color: #2175ce;
+}
+
+.create-update-Product .dropdown {
+  position: relative;
+}
+
+.create-update-Product .dropdown-icon {
+  position: absolute;
+  top: 50%;
+  left: 96%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/********************추가 css********************/
+.create-update-Product {
+  width: 48%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* 회색 배경 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
+}
+
+.create-update-Product h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  color: #474747;
+  font-weight: bold;
+  width: 20%; /* 레이블 너비 설정 */
+  padding: 10px;
+  background-color: #efefef; /* 레이블 배경색 */
+  border-right: 1px solid #ccc; /* 입력 필드와 구분선 */
+  text-align: right; /* 레이블 텍스트 우측 정렬 */
+}
+
+.form-group [readOnly] {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.form-group ::placeholder {
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .create-update-Product {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.create-update-Product img {
+  width: 50px;
+  height: auto;
+}
+
+.orderList img {
+  width: 50px;
+  height: auto;
+}

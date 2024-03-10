@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.shop.order.dao.OrderDao">
+
+	<!--주문정보 저장 -->
+	<insert id="insertOrder"
+		parameterType="com.camply.shop.common.vo.OrderVO">
+		INSERT INTO SHOP_ORDER (USER_ID, ORDER_ORDERER_NAME,
+		ORDER_ORDERER_EMAIL,ORDER_ORDERER_PHONE,ORDER_RECEIVER_NAME,ORDER_RECEIVER_ADDRESS,ORDER_RECEIVER_ADDRESSDETAIL,ORDER_RECEIVER_PHONE,ORDER_RECEIVER_MESSAGE,ORDER_RECEIVER_DELIVERY_MESSAGE,PRODUCT_NAME,ORDER_PRODUCT_AMOUNT,ORDER_DATE,PRODUCT_PRICE,PRODUCT_ID,PRODUCT_THUMBNAIL,TOTAL_PRICE)
+		VALUES
+		(#{userId},#{orderOrdererName},#{orderOrderEmail},#{orderOrderPhone},#{orderReceiverName},#{orderReceiverAddress},#{orderReceiverAddressDetail},#{orderReceiverPhone},#{orderReceiverMessage},#{orderReceiverDeleveryMsg},#{productName},#{orderProductAmount},sysdate,#{productPrice},#{productId},#{productThumbnail},#{totalPrice})
+	</insert>
+
+</mapper>

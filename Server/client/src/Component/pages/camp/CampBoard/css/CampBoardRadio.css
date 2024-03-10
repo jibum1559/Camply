@@ -1,0 +1,4 @@
+.radio-buttons-container div {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the spacing between radio buttons if needed */
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.camply.shop.mypage.admin.ordermanagement.dao.OrderManagementDAO">
+	<resultMap id="OrderListResultMap" type="com.camply.shop.common.vo.OrderVO">
+		<!-- Order 매핑 -->
+		<id property="orderNo" column="ORDER_NO"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="orderOrdererName" column="ORDER_ORDERER_NAME"/>
+		<result property="orderOrderEmail" column="ORDER_ORDERER_EMAIL"/>
+		<result property="orderOrderPhone" column="ORDER_ORDERER_PHONE"/>
+		<result property="orderReceiverName" column="ORDER_RECEIVER_NAME"/>
+		<result property="orderReceiverAddress" column="ORDER_RECEIVER_ADDRESS"/>
+		<result property="orderReceiverAddressDetail" column="ORDER_RECEIVER_ADDRESSDETAIL"/>
+		<result property="orderReceiverPhone" column="ORDER_RECEIVER_PHONE"/>
+		<result property="orderReceiverMessage" column="ORDER_RECEIVER_MESSAGE"/>
+		<result property="orderReceiverDeleveryMsg" column="ORDER_RECEIVER_DELIVERY_MESSAGE"/>
+		<result property="productName" column="PRODUCT_NAME"/>
+		<result property="orderProductAmount" column="ORDER_PRODUCT_AMOUNT"/>
+		<result property="orderDate" column="ORDER_DATE"/>
+		<result property="productPrice" column="PRODUCT_PRICE"/>
+		<result property="productId" column="PRODUCT_ID"/>
+		<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+		<result property="totalPrice" column="TOTAL_PRICE"/>
+	
+		<!-- ShopProduct 매핑 -->
+		<association property="product" javaType="com.camply.shop.common.vo.ProductVO">
+		    <id property="productId" column="PRODUCT_ID"/>
+		    <result property="productName" column="PRODUCT_NAME"/>
+		    <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+			<result property="productPrice" column="PRODUCT_PRICE"/>
+			<result property="productCategory" column="PRODUCT_CATEGORY"/>
+			<result property="productColor" column="PRODUCT_COLOR"/>
+			<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+			<result property="productMain" column="PRODUCT_MAIN"/>
+			<result property="productMain2" column="PRODUCT_MAIN2"/>
+			<result property="productMain3" column="PRODUCT_MAIN3"/>
+			<result property="productContent" column="PRODUCT_CONTENT"/>
+			<result property="productCreateDate" column="PRODUCT_CREATE_DATE"/>
+			<result property="productStock" column="PRODUCT_STOCK"/>
+			<result property="userId" column="USER_ID"/>
+			<result property="productStatus" column="PRODUCT_STATUS"/>
+			<result property="productCode" column="PRODUCT_CODE"/>
+		</association>
+	</resultMap>
+    <!--내 등록상품 주문정보 조회-->
+	<select id="getOrderList" resultMap="OrderListResultMap">
+        SELECT
+            o.ORDER_DATE, o.ORDER_NO, o.ORDER_ORDERER_NAME, o.PRODUCT_NAME, o.TOTAL_PRICE, o.ORDER_PRODUCT_AMOUNT, o.PRODUCT_PRICE
+        FROM
+            SHOP_ORDER o
+            JOIN SHOP_PRODUCT p ON o.PRODUCT_ID = p.PRODUCT_ID
+        WHERE
+            p.USER_ID = #{userId}
+        ORDER BY
+            o.ORDER_DATE DESC
+    </select>
+    
+	
+	<!-- 주문조회 중 상품명으로 검색 -->
+	<select id="selectOrdersBySellerAndProductName" parameterType="map" resultMap="OrderListResultMap">
+	    SELECT 
+			o.ORDER_DATE, o.ORDER_NO, o.ORDER_ORDERER_NAME, o.PRODUCT_NAME, o.TOTAL_PRICE, o.ORDER_PRODUCT_AMOUNT, o.PRODUCT_PRICE
+		FROM SHOP_ORDER o
+		    JOIN SHOP_PRODUCT p ON o.PRODUCT_ID = p.PRODUCT_ID
+		    WHERE p.USER_ID = #{userId}
+	    AND p.PRODUCT_NAME LIKE '%' || #{productName} || '%'
+	</select>
+		
+	<!-- 주문조회 중 주문자명으로 검색 -->
+	<select id="selectOrdersBySellerAndOrderName" parameterType="map" resultMap="OrderListResultMap">
+	    SELECT 
+			o.ORDER_DATE, o.ORDER_NO, o.ORDER_ORDERER_NAME, o.PRODUCT_NAME, o.TOTAL_PRICE, o.ORDER_PRODUCT_AMOUNT, o.PRODUCT_PRICE
+		FROM SHOP_ORDER o
+		    JOIN SHOP_PRODUCT p ON o.PRODUCT_ID = p.PRODUCT_ID
+		    WHERE p.USER_ID = #{userId}
+	    AND o.ORDER_ORDERER_NAME LIKE '%' || #{orderOrdererName} || '%'
+	</select>	
+	
+    <!-- 주문번호별 조회 -->
+    <select id="selectOrderByOrderNo" parameterType="map" resultMap="OrderListResultMap">
+	    SELECT
+	       o.ORDER_DATE, o.ORDER_NO, o.ORDER_ORDERER_NAME, o.PRODUCT_NAME, o.TOTAL_PRICE, o.ORDER_PRODUCT_AMOUNT, o.PRODUCT_PRICE
+	    FROM
+	        SHOP_ORDER o
+	        JOIN SHOP_PRODUCT p ON o.PRODUCT_ID = p.PRODUCT_ID
+	    WHERE
+	        o.ORDER_NO = #{orderNo}
+	        AND p.USER_ID = #{userId} 
+	</select>
+</mapper>

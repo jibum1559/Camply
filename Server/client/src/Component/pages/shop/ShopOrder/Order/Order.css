@@ -1,0 +1,106 @@
+
+
+fieldset {
+    border: 0 none;
+
+}
+
+legend, caption {
+    display: none;
+}
+
+
+.order h3 {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #202020;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+
+.order .tbl-order {
+    position: relative;
+    border-top: 1px solid #000;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+col {
+    display: table-column;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    margin: 0;
+    padding: 0;
+}
+
+
+.order .tbl-order .text-1 {
+    padding: 0 15px;
+
+}
+
+.order .text-1 {
+    text-align: left;
+}
+
+
+.order .input-txt {
+    height: 23px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0 5px;
+}
+
+
+.order input[type=text]{
+    width: 168px;
+    height: 23px;
+    line-height: 25px;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+}
+
+.order .select {
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    background: #fff;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+

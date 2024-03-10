@@ -1,0 +1,44 @@
+.comment-writer {
+    margin-bottom: 15px;
+    padding: 12px 16px 20px;
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,.1);
+    width: 860px;
+}
+.comment-writer_tl {
+    position: relative;
+    margin-bottom: 10px;
+}
+.fl {
+    float: left;
+}
+strong {
+    font-weight: bold;
+}
+.clear {
+    display: block;
+    position: relative;
+    clear: both;
+}
+.simple-writer {
+    margin-left: 0;
+}
+.text-btn input {
+    width: 720.4px;
+    height: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+   
+}
+.text-btn button {
+    background-color: #FEA92A;
+    border: 1px solid #FEA92A;
+}
+.comment-container {
+    display: flex;
+    justify-content: center;
+}

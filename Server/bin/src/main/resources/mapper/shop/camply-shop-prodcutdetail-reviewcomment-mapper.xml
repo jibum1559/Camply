@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.shop.productdetail.reviewcomment.dao.ReviewCommentDao">
+
+<!--댓글 표시-->
+   <resultMap id="CommentView" type="com.camply.shop.productdetail.reviewcomment.vo.ReviewCommentVO">
+			<id property="commentNo" column="COMMENT_NO"/>
+				<result property="reviewNo" column="REVIEW_NO"/>
+			  	<result property="commentText" column="COMMENT_TEXT"/>
+			  	<result property="commentDate" column="COMMENT_DATE"/>
+		        
+	</resultMap>
+	<select id="getComment" resultMap="CommentView" parameterType="int" >
+		SELECT * FROM Shop_Review_Comment WHERE REVIEW_NO = #{reviewNo} ORDER BY COMMENT_NO DESC
+	</select>
+	
+<!--댓글 작성  -->
+    <insert id="insertComment" parameterType="com.camply.shop.productdetail.reviewcomment.vo.ReviewCommentVO">
+        INSERT INTO SHOP_REVIEW_COMMENT (review_no, comment_text, comment_date)
+        VALUES (#{reviewNo}, #{commentText},sysdate)
+    </insert>
+</mapper>

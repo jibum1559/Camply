@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.camply.camp.reserve.dao.ReserveDao">
+
+     <resultMap id="CampReserveMap" type="com.camply.camp.reserve.vo.ReserveVO">
+        <id property="USER_ID" column="USER_ID" />
+        <result property="CAMP_CHECKIN" column="CAMP_CHECKIN"/>
+        <result property="CAMP_CHECKOUT" column="CAMP_CHECKOUT"/>
+        <result property="ALLOWED_USERS_ADULT" column="ALLOWED_USERS_ADULT"/>
+        <result property="ALLOWED_USERS_CHILD" column="ALLOWED_USERS_CHILD"/>
+        <result property="COMPLETE_PAYMENT" column="COMPLETE_PAYMENT"/>
+        <result property="CAMP_USER_PHONE" column="CAMP_USER_PHONE"/>
+        <result property="CAMP_USER_EMAIL" column="CAMP_USER_EMAIL"/>
+        <result property="CAMP_ID" column="CAMP_ID"/>
+        <result property="CAMP_NAME" column="CAMP_NAME"/>
+        <result property="TOTAL_PRICE" column="TOTAL_PRICE"/>
+    </resultMap>
+
+	<select id="insertReserveCamp" resultMap="CampReserveMap" parameterType="com.camply.camp.reserve.vo.ReserveVO">
+		INSERT INTO CAMP_RESERVATION(USER_ID, CAMP_CHECKIN, CAMP_CHECKOUT, ALLOWED_USERS_ADULT, ALLOWED_USERS_CHILD, COMPLETE_PAYMENT, CAMP_USER_PHONE, CAMP_USER_EMAIL, CAMP_ID, CAMP_NAME, TOTAL_PRICE) 
+		VALUES (#{USER_ID}, #{CAMP_CHECKIN}, #{CAMP_CHECKOUT}, #{ALLOWED_USERS_ADULT}, #{ALLOWED_USERS_CHILD}, #{COMPLETE_PAYMENT}, #{CAMP_USER_PHONE}, #{CAMP_USER_EMAIL}, #{CAMP_ID}, #{CAMP_NAME}, #{TOTAL_PRICE})
+	</select>
+</mapper>

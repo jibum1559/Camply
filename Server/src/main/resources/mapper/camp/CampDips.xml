@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//myBatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.camp.dips.dao.DipsDAO">
+
+    <resultMap id="CampDipsMap" type="com.camply.camp.dips.vo.DipsVO">
+        <id column="USER_ID" property="USER_ID"/>
+        <result column="CAMP_ID" property="CAMP_ID"/>
+    </resultMap>
+
+    <insert id="insertCampDips" parameterType="com.camply.camp.dips.vo.DipsVO">
+        INSERT INTO CAMP_DIPS (USER_ID,CAMP_ID) VALUES (#{USER_ID}, #{CAMP_ID})
+    </insert>
+
+    <delete id="deleteCampDips" parameterType="com.camply.camp.dips.vo.DipsVO">
+        DELETE FROM CAMP_DIPS WHERE USER_ID = #{USER_ID} AND CAMP_ID = #{CAMP_ID}
+    </delete>
+	
+    <select id="selectCampDips" resultMap="CampDipsMap" parameterType="com.camply.camp.dips.vo.DipsVO">
+    	SELECT * FROM CAMP_DIPS WHERE USER_ID = #{USER_ID} AND CAMP_ID = #{CAMP_ID}
+    </select>
+</mapper>
+

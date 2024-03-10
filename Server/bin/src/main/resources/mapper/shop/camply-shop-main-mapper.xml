@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.camply.shop.main.dao.MainDao">			
+		<resultMap id="ShopMain" type="com.camply.shop.common.vo.ProductVO">
+			    <id property="productId" column="PRODUCT_ID"/>
+		        	<result property="productName" column="PRODUCT_NAME"/>
+				    <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+					<result property="productPrice" column="PRODUCT_PRICE"/>
+					<result property="productCategory" column="PRODUCT_CATEGORY"/>
+					<result property="productColor" column="PRODUCT_COLOR"/>
+					<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+					<result property="productMain" column="PRODUCT_MAIN"/>
+					<result property="productMain2" column="PRODUCT_MAIN2"/>
+					<result property="productMain3" column="PRODUCT_MAIN3"/>
+					<result property="productContent" column="PRODUCT_CONTENT"/>
+					<result property="productCreateDate" column="PRODUCT_CREATE_DATE"/>
+					<result property="productStock" column="PRODUCT_STOCK"/>
+					<result property="userId" column="USER_ID"/>
+					<result property="productStatus" column="PRODUCT_STATUS"/>
+					<result property="productCode" column="PRODUCT_CODE"/>
+		</resultMap>
+		<resultMap id="ShopSearch" type="com.camply.shop.common.vo.ProductVO">
+			<id property="productName" column="PRODUCT_Name"/>
+			<result property="productThumbnail" column="product_thumbnail"/>
+		</resultMap>
+		<resultMap id="ShopCategory" type="com.camply.shop.common.vo.ProductVO">
+			<id property="productCategory" column="PRODUCT_CATEGORY"/>
+				<result property="productId" column="PRODUCT_ID"/>
+			  	<result property="productName" column="PRODUCT_NAME"/>
+			    <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+				<result property="productPrice" column="PRODUCT_PRICE"/>
+				<result property="productColor" column="PRODUCT_COLOR"/>
+				<result property="productThumbnail" column="PRODUCT_THUMBNAIL"/>
+				<result property="productMain" column="PRODUCT_MAIN"/>
+				<result property="productMain2" column="PRODUCT_MAIN2"/>
+				<result property="productMain3" column="PRODUCT_MAIN3"/>
+				<result property="productContent" column="PRODUCT_CONTENT"/>
+				<result property="productCreateDate" column="PRODUCT_CREATE_DATE"/>
+				<result property="productStock" column="PRODUCT_STOCK"/>
+				<result property="userId" column="USER_ID"/>
+				<result property="productStatus" column="PRODUCT_STATUS"/>
+				<result property="productCode" column="PRODUCT_CODE"/>
+		</resultMap>
+		
+	
+	<!-- 쇼핑몰 메인페이지 썸네일 노출 쿼리 -->
+	<select id="getMain" resultMap="ShopMain" parameterType="int" >
+		SELECT * FROM SHOP_PRODUCT WHERE PRODUCT_ID = #{productId}
+	</select>
+	
+	<!-- 쇼핑몰 메인페이지 검색창 쿼리 -->
+	<select id="searchMain" resultMap="ShopSearch" parameterType="String" >
+		 SELECT * FROM SHOP_PRODUCT WHERE PRODUCT_NAME LIKE '%' || #{productName} || '%'
+	</select>
+	
+	<!-- 쇼핑몰 메인페이지 카테고리별 썸네일 노출 쿼리 -->
+	<select id="getMainCategory" resultMap="ShopCategory" parameterType="String" >
+		SELECT * FROM SHOP_PRODUCT WHERE PRODUCT_CATEGORY = #{productCategory}
+	</select>
+	
+	
+	</mapper>
