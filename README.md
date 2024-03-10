@@ -23,3 +23,6 @@ Spring & React를 활용한 캠핑 전문 쇼핑몰 & 예약 사이트
 
 # 4.화면 설계
 <img src="https://github.com/chanakoh/camply/blob/master/img/first.png?raw=true">
+
+# 5.시연 영상
+[![Video Label](http://img.youtube.com/vi/59USvjy2toI/0.jpg)](https://youtu.be/59USvjy2toI)
