@@ -20,3 +20,4 @@ Spring & React를 활용한 캠핑 전문 쇼핑몰 & 예약 사이트
 
 # 3.ERD 설계
 <img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://github.com/jibum1559/Camply/blob/master/%EC%9D%B4%EB%AF%B8%EC%A7%80/Camply.png)https://github.com/jibum1559/Camply/blob/master/%EC%9D%B4%EB%AF%B8%EC%A7%80/Camply.png">
+![Camply](https://github.com/jibum1559/Camply/assets/143372311/28729a50-d44a-4f60-96b9-8d4d4856e370)
